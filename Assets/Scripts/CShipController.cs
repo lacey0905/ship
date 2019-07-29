@@ -13,17 +13,25 @@ public class CShipController : MonoBehaviour
     public float shipTurnSpeed = 100f;
 
     public float angle = 0f;
+    
 
     public CShipRotate rotate;
 
     void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
+        rotate = rotate.GetComponent<CShipRotate>();
     }
 
     void Start()
     {
     }
+
+
+    public Vector3 turn;
+
+
+    Quaternion newRot;
 
     void Update()
     {
@@ -34,43 +42,30 @@ public class CShipController : MonoBehaviour
 
         if (h != 0)
         {
-            angle += Time.deltaTime * h * shipTurnSpeed;
-            
-            if(angle > 360f)
-            {
-                angle = 0f;
-            }
-            Vector3 rot = new Vector3(0f, angle, 0f);
+            angle += h * Time.deltaTime * shipTurnSpeed;
 
-            rotate.transform.localEulerAngles = rot;
+            Vector3 direction = transform.forward;
+
+            Quaternion q = Quaternion.Euler(0f, angle, 0f);
+            Vector3 newDirection = q * direction;
+
+            turn = newDirection;
+
+            rotate.transform.forward = turn;
 
         }
         else
         {
             angle = 0f;
+            rotate.transform.forward = transform.forward;
+
+            newRot = Quaternion.LookRotation(turn);
+
         }
-        
-
-
-
-        //if (h != 0)
-        //{
-        //    transform.Rotate(Vector3.up * Time.deltaTime * h * shipTurnSpeed);
-        //    rot = this.transform.forward;
-        //}
-        //else
-        //{
-        //    //Quaternion newRot = Quaternion.LookRotation(rot);
-
-        //    ship.transform.rotation = Quaternion.LookRotation(rot);
-
-        //    transform.rotation = ship.transform.rotation;
-        //}
-
-
-
-
-
+        if (rigidbody.rotation != newRot)
+        {
+            rigidbody.rotation = Quaternion.Slerp(rigidbody.rotation, newRot, 2f * Time.deltaTime);
+        }
 
     }
 

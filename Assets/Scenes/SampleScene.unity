@@ -166,6 +166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 175311321}
   - component: {fileID: 175311318}
+  - component: {fileID: 175311320}
   - component: {fileID: 175311319}
   m_Layer: 0
   m_Name: Ship
@@ -203,6 +204,23 @@ MonoBehaviour:
   shipTurnSpeed: 100
   angle: 0
   rotate: {fileID: 100047849}
+  turn: {x: 0, y: 0, z: 0}
+--- !u!54 &175311320
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175311317}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &175311321
 Transform:
   m_ObjectHideFlags: 0
