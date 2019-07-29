@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c577f552536bbe644b9427477aafaeda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipSpeed: 10
+  shipSpeed: 2
   shipTurnSpeed: 100
   angle: 0
   rotate: {fileID: 100047849}
@@ -443,7 +443,7 @@ Transform:
   m_GameObject: {fileID: 1192359501}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.576, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 181946311}
   m_RootOrder: 0
@@ -673,10 +673,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1711473196}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 26.13, z: 0}
+  m_LocalRotation: {x: 0.47503117, y: -0, z: -0, w: 0.879969}
+  m_LocalPosition: {x: 0, y: 26.13, z: -16.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 56.723003, y: 0, z: 0}

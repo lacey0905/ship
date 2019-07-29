@@ -35,7 +35,7 @@ public class CShipController : MonoBehaviour
 
     void Update()
     {
-        //transform.Translate(Vector3.forward * shipSpeed * Time.smoothDeltaTime);
+        transform.Translate(Vector3.forward * shipSpeed * Time.smoothDeltaTime);
 
         float h = Input.GetAxisRaw("Horizontal");
 
